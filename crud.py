@@ -87,7 +87,6 @@ def cadastrar_usuario():
                         endereco_user)
 
 
-    cadastros.clear()
     escreve_no_arquivo(cadastros)
 
     
