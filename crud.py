@@ -153,16 +153,16 @@ def atulizar_cadastro():
 
             if opcao == 1:
                 nome_atualizado = input(f'Nome: ')
-                cadastro[index]({'nome': nome_atualizado})
+                cadastro[index].update({'nome': nome_atualizado})
                 escreve_no_arquivo(cadastro)
             elif opcao == 2:
                 data_de_nacimento_atualizado = input(f'Data de Nacimento:')
-                cadastro[index]({'idade': data_de_nacimento_atualizado})
+                cadastro[index].update({'idade': data_de_nacimento_atualizado})
                 escreve_no_arquivo(cadastro)
             elif opcao == 3:
                 cpf_atualizado = input(f'CPF: {cpf}')
                 cpf_verificado = atualizar_cpf(cpf_atualizado)
-                cadastro[index]({'cpf':cpf_verificado})
+                cadastro[index].update({'cpf':cpf_verificado})
                 escreve_no_arquivo(cadastro)
                 
             elif opcao == 4:
