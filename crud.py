@@ -154,17 +154,32 @@ def atulizar_cadastro():
             if opcao == 1:
                 nome_atualizado = input(f'Nome: ')
                 cadastro[index]({'nome': nome_atualizado})
+                escreve_no_arquivo(cadastro)
             elif opcao == 2:
                 data_de_nacimento_atualizado = input(f'Data de Nacimento:')
                 cadastro[index]({'idade': data_de_nacimento_atualizado})
+                escreve_no_arquivo(cadastro)
             elif opcao == 3:
                 cpf_atualizado = input(f'CPF: {cpf}')
                 cpf_verificado = atualizar_cpf(cpf_atualizado)
                 cadastro[index]({'cpf':cpf_verificado})
+                escreve_no_arquivo(cadastro)
                 
             elif opcao == 4:
                 endereco_atualizado= input(f'Endereco: ')
-                cadastro[index]({'endereco': endereco_atualizado})
+                cadastro[index].update({'endereco': endereco_atualizado})
+                escreve_no_arquivo(cadastro)
+
+    
+    
+    resp = input('Deseja fazer uma nova alteração? S/N: ')
+    if resp == 'S':
+        pesquisar_cadastro()
+    elif resp == 'N':
+        menu_principa()
+        os.system('clear')
+
+            
             
 
 
@@ -300,10 +315,11 @@ def escreve_no_arquivo(cadastros):
 
 
 #Designer
+
 def layout(): 
     os.system('clear')
     print('---------------------------------------')
-    print('#'*6 + ' Sistemas de Casdastro ' + '#'*6)
+    print('#'*6 + ' Sistemas de Cadastro ' + '#'*6)
     print('---------------------------------------')
         
 def apresentacao(nome,idade,cpf,endereco):
