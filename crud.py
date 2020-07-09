@@ -2,7 +2,7 @@ import os
 import time
 import pickle
 
-from validações import ValidaCpf
+from api.validacoes import ValidaCpf
 
 cadastros = []
 
@@ -334,4 +334,5 @@ def apresentacao(nome,idade,cpf,endereco):
 
 
 
-menu_principa()
+if __name__ == "__main__":
+    menu_principa()
